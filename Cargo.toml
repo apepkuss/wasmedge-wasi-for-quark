@@ -1,0 +1,21 @@
+[package]
+edition = "2021"
+name = "wasmedge-wasi-for-quark"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1.61"
+cap-fs-ext = "1.0.3"
+cap-rand = "1.0.3"
+cap-std = "1.0.3"
+cap-time-ext = "1.0.3"
+fs-set-times = "0.18.0"
+io-lifetimes = {version = "1.0.3", default-features = false}
+system-interface = "0.25.2"
+tracing = "0.1.37"
+wasi-common = "4.0.0"
+
+[target.'cfg(unix)'.dependencies]
+rustix = {version = "0.36.6", features = ["fs"]}
